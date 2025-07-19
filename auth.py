@@ -4,10 +4,6 @@ import time
 from dotenv import load_dotenv
 import os
 
-# client_id = '13718'
-# client_secret = 'ad3bb9fabcafb01d9f2f8a2871d23f5c1a8825a7'
-# code = '1b8b42e5629962fb59425d0e9aba7764573570b3'
-
 load_dotenv()
 
 CLIENT_ID = os.getenv("STRAVA_CLIENT_ID")
