@@ -1,8 +1,8 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-import requests
 from auth import check_token_expiration
 from manage_tokens import *
+import requests
 
 cost_of_journey = 3.8
 

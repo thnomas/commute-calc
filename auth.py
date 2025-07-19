@@ -20,18 +20,15 @@ def generate_new_token():
     headers = {}
     response = requests.request("POST", url, headers=headers, data=payload)
     data = response.json()
-
-    print(data)
     write_to_file(data)
     return data
 
 def check_token_expiration(info):
     now = int(time.time())
     if now >= int(info["expires_at"]):
-       print("Token expired...")
-       print("Generating new token...")
+       print("Token expired. Generating new token...")
        generate_new_token()
        return True
     else:
-        print("Valid Token")
+        print("Token valid")
 

@@ -1,77 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <title>Cycling Savings</title>
- <link rel="preconnect" href="https://fonts.googleapis.com">
+<meta charset="UTF-8">
+<title>Cycling Savings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<style>
 
- <style>
-
-/* 2 */
 body {
- margin: 0;
- font-family: "Darumadrop One", sans-serif;
- background: linear-gradient(135deg, #a8e6ff, #81c784, #388e3c);
- /* background: linear-gradient(135deg, #e5a8ff, #b7e278, #9c6531); */
- height: 100vh;
- display: flex;
- justify-content: center;
- align-items: center;
- overflow: hidden;
- flex-direction: column;
+  margin: 0;
+  font-family: "Darumadrop One", sans-serif;
+  background: linear-gradient(135deg, #a8e6ff, #81c784, #388e3c);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
 }
+
 .container {
- display: flex;
- justify-content: center;
- align-items: center;
- height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .circle-card {
- width: 700px;
- height: 700px;
- border-radius: 50%;
- background: #f6f5f4e4;
- color: #2d2f2d;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- text-align: center;
- box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
- transition: all 0.6s ease-in-out;
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- /* animation: pulse 5.5s ease-in-out infinite; */
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: #f6f5f4e4;
+  color: #2d2f2d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.6s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* animation: pulse 5.5s ease-in-out infinite; */
 }
 
 .circle-card-outer {
- width: 750px;
- height: 750px;
- border-radius: 50%;
- background: #eaeeef32;
- color: #2d2f2d;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- text-align: center;
- /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  background: #eaeeef32;
+  color: #2d2f2d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
- transition: all 0.6s ease-in-out;
- /* animation: pulse 5.5s ease-in-out infinite; */
+  transition: all 0.6s ease-in-out;
+  /* animation: pulse 5.5s ease-in-out infinite; */
 }
 .circle-card:hover{
     
 }
+
 @keyframes pulse {
  0%, 100% {
    transform: translate(-50%, -50%) scale(1);
@@ -82,116 +81,112 @@ body {
 }
 
 
-   .circle-card .icon {
-     font-size: 3.5rem;
-     margin-bottom: 0.5rem;
-   }
+.circle-card .icon {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
 
-   .circle-card .label {
-     font-size: 1.5rem;
-     font-weight: 500;
-     margin-bottom: 0.25rem;
-   }
+.circle-card .label {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
 
-   .circle-card .amount {
-     font-size: 3.5rem;
-     font-weight: bold;
-     margin: 0.25rem 0;
-   }
+.circle-card .amount {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0.25rem 0;
+}
 
-   .circle-card .since {
-     font-size: 0.85rem;
-     color: #388e3c;
-   }
-       .circle-card .text {
-     font-size: 1.25rem;
-     color: #363434;
-     margin: 1rem 6rem 0 6rem;
-  
-     font-weight:300;
-   font-family: "Zain", sans-serif;
-  
-   text-align:center;
-   }
+.circle-card .since {
+  font-size: 0.85rem;
+  color: #388e3c;
+}
 
-   span {
-       font-weight: 600;
-   }
+.circle-card .text {
+  font-size: 1.25rem;
+  color: #363434;
+  margin: 1rem 6rem 0 6rem;
 
-   .footer {
- flex-shrink: 0; /* don't shrink */
- color: white;
- text-align: center;
- padding: 1rem 0;
- font-size: 1.2rem;
- font-weight: 400;
+  font-weight:300;
+  font-family: "Zain", sans-serif;
+
+  text-align:center;
+}
+
+span {
+    font-weight: 600;
+}
+
+.footer {
+  flex-shrink: 0; /* don't shrink */
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 .footer a {
-   color: #fff;
-     font-family: "Zain", sans-serif;
-    
+  color: #fff;
+  font-family: "Zain", sans-serif;   
 }
-
- </style>
+</style>
 </head>
 <body>
-
-<div class="container">
-   <div class="circle-card-outer">
-   <div class="circle-card" id="savingsCard">
-       <div class="icon">🚴‍♂️</div>
-       <div class="label">Total Saved from Cycling</div>
-       <div class="since">( Since 29/04/2025 )</div>
-       <div class="amount" id="savings">£0.00</div>
+  <div class="container">
+    <div class="circle-card-outer">
+      <div class="circle-card" id="savingsCard">
+      <div class="icon">🚴‍♂️</div>
+      <div class="label">Total Saved from Cycling</div>
+      <div class="since">( Since 29/04/2025 )</div>
+      <div class="amount" id="savings">£0.00</div>
       
-       <div class="text">
-           <p>I started cycling to work in April 2025 to help lower the cost of my commute. This is just a motivational tool to help me see how much I've saved by cycling. <br><span>Of course, cycling has so many more benefits! 💚🫁🦵</span></p>
-       </div>
-   </div>
-   </div>
+      <div class="text">
+        <p>I started cycling to work in April 2025 to help lower the cost of my commute. This is just a motivational tool to help me see how much I've saved by cycling. <br><span>Of course, cycling has so many more benefits! 💚🫁🦵</span></p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <footer class="footer">
- <a href="#">GITHUB</a>
+  <a href="#">GITHUB</a>
 </footer>
 
 <script>
 
 function animateCount(el, start, end, duration) {
- const range = end - start;
- const startTime = performance.now();
+  const range = end - start;
+  const startTime = performance.now();
 
- function update(currentTime) {
-   const elapsed = currentTime - startTime;
-   const progress = Math.min(elapsed / duration, 1);
-   const easeOutExpo = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-   const current = start + range * easeOutExpo;
-   el.textContent = '£' + current.toFixed(2);
-   if (progress < 1) {
-     requestAnimationFrame(update);
-   }
- }
-
- requestAnimationFrame(update);
+function update(currentTime) {
+  const elapsed = currentTime - startTime;
+  const progress = Math.min(elapsed / duration, 1);
+  const easeOutExpo = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+  const current = start + range * easeOutExpo;
+  el.textContent = '£' + current.toFixed(2);
+  if (progress < 1) {
+    requestAnimationFrame(update);
+  }
+}
+requestAnimationFrame(update);
 }
 
 const savingsEl = document.getElementById('savings');
 
 // Fetch savings data from your Flask API
 fetch("http://127.0.0.1:5000/api/savings")
- .then(res => res.json())
- .then(data => {
-   if (data.total_saved !== undefined) {
-     animateCount(savingsEl, 0, Number(data.total_saved), 400);
-   } else {
-     console.error("API response missing 'total_saved':", data);
-   }
- })
- .catch(err => {
-   console.error("Error fetching data from API:", err);
- });
+.then(res => res.json())
+.then(data => {
+  if (data.total_saved !== undefined) {
+    animateCount(savingsEl, 0, Number(data.total_saved), 400);
+  } else {
+    console.error("API response missing 'total_saved':", data);
+  }
+})
+.catch(err => {
+  console.error("Error fetching data from API:", err);
+});
 
 </script>
-
 </body>
 </html>
