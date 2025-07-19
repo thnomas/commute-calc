@@ -5,24 +5,28 @@
 <title>Cycling Savings</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap&family=Outfit:wght@100..900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div class="corner top-left"></div>
+  <div class="corner top-right"></div>
+  <div class="corner bottom-left"></div>
+  <div class="corner bottom-right"></div>
+
   <div class="container">
-    <div class="circle-card-outer">
       <div class="circle-card" id="savingsCard">
       <div class="icon">🚴‍♂️</div>
       <div class="label">Total Saved from Cycling</div>
       <div class="since">( Since 29/04/2025 )</div>
       <div class="amount" id="savings">£-.--</div>
+      <div class="since" id="journeys">Over 0 Jounrneys</div>
       
       <div class="text">
-        <p>I started cycling to work in April 2025 to help lower the cost of my commute. This is just a motivational tool to help me see how much I've saved by cycling. <br><span>Of course, cycling has so many more benefits! 💚🫁🦵</span></p>
+        <p>I started cycling to work in April 2025 to save some money. This is just a motivational tool to help me see how much I've saved by cycling instead of getting the Tube. <br><span>Of course, cycling has so many other benefits! 💚🫁🦵</span></p>
       </div>
     </div>
-  </div>
 </div>
 
 <footer class="footer">
@@ -49,20 +53,22 @@ requestAnimationFrame(update);
 }
 
 const savingsEl = document.getElementById('savings');
+const journeyEl = document.getElementById('journeys');
 
-// Fetch savings data from your Flask API
 fetch("http://127.0.0.1:5000/api/savings")
-.then(res => res.json())
-.then(data => {
-  if (data.total_saved !== undefined) {
-    animateCount(savingsEl, 0, Number(data.total_saved), 400);
-  } else {
-    console.error("API response missing 'total_saved':", data);
-  }
-})
-.catch(err => {
-  console.error("Error fetching data from API:", err);
-});
+  .then(res => res.json())
+  .then(data => {
+    if (data.total_saved !== undefined && data.journey_count !== undefined) {
+      animateCount(savingsEl, 0, Number(data.total_saved), 400);
+      journeyEl.textContent = `Over ${data.journey_count} Journeys`;
+    } else {
+      console.error("API response missing required fields:", data);
+    }
+  })
+  .catch(err => {
+    console.error("Error fetching data from API:", err);
+  });
+
 
 </script>
 </body>

@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: "Darumadrop One", sans-serif;
-  background: linear-gradient(135deg, #a8e6ff, #81c784, #388e3c);
+  font-family: "Rubik Dirt", system-ui;
+  background-color: #ebedeb;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -21,55 +21,17 @@ body {
   width: 700px;
   height: 700px;
   border-radius: 50%;
-  background: #f6f5f4e4;
   color: #2d2f2d;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.6s ease-in-out;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* animation: pulse 5.5s ease-in-out infinite; */
 }
-
-.circle-card-outer {
-  width: 750px;
-  height: 750px;
-  border-radius: 50%;
-  background: #eaeeef32;
-  color: #2d2f2d;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  transition: all 0.6s ease-in-out;
-  /* animation: pulse 5.5s ease-in-out infinite; */
-}
-.circle-card:hover{
-    
-}
-
-@keyframes pulse {
- 0%, 100% {
-   transform: translate(-50%, -50%) scale(1);
- }
- 50% {
-   transform: translate(-50%, -50%) scale(1.025);
- }
-}
-
 
 .circle-card .icon {
   font-size: 3.5rem;
@@ -84,24 +46,59 @@ body {
 
 .circle-card .amount {
   font-size: 3.5rem;
-  font-weight: bold;
+  font-weight: 800;
   margin: 0.25rem 0;
 }
 
 .circle-card .since {
-  font-size: 0.85rem;
-  color: #388e3c;
+  font-size: 0.95rem;
+  color: #676767db;
 }
 
 .circle-card .text {
   font-size: 1.25rem;
   color: #363434;
   margin: 1rem 6rem 0 6rem;
-
-  font-weight:300;
+  font-weight: 300;
   font-family: "Zain", sans-serif;
+  text-align: center;
+}
 
-  text-align:center;
+.corner {
+  position: absolute;
+  width: 250px; /* adjust for size */
+  height: 150px;
+  z-index: 1;
+  /* background-color: #2d2f2d; default color or override per corner */
+  clip-path: polygon(0 0, 100% 0, 0 100%); /* triangle shape */
+}
+
+/* Position each */
+.top-left {
+  top: 0;
+  left: 0;
+  background-color: #1d97ab82;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  /* background-color: #ffffff; */
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  /* background-color: #ffffff; */
+  clip-path: polygon(0 100%, 100% 100%, 0 0);
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+   background-color: #4ba37d82;
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
 }
 
 span {
@@ -109,14 +106,14 @@ span {
 }
 
 .footer {
-  flex-shrink: 0; /* don't shrink */
+  flex-shrink: 0;
   color: white;
   text-align: center;
   padding: 1rem 0;
   font-size: 1.2rem;
   font-weight: 400;
 }
+
 .footer a {
-  color: #fff;
-  font-family: "Zain", sans-serif;   
+  color: #5f5b5b;
 }
