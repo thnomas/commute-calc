@@ -18,8 +18,10 @@ body {
 }
 
 .circle-card {
-  width: 700px;
-  height: 700px;
+  width: 90vmin;
+  height: 90vmin;
+  max-width: 700px;
+  max-height: 700px;
   border-radius: 50%;
   color: #2d2f2d;
   display: flex;
@@ -45,7 +47,7 @@ body {
 }
 
 .circle-card .amount {
-  font-size: 3.5rem;
+  font-size: 5.5rem;  
   font-weight: 800;
   margin: 0.25rem 0;
 }
@@ -58,17 +60,17 @@ body {
 .circle-card .text {
   font-size: 1.25rem;
   color: #363434;
-  margin: 1rem 6rem 0 6rem;
   font-weight: 300;
   font-family: "Zain", sans-serif;
   text-align: center;
+  margin: 1rem 2rem 0 2rem;
 }
 
 .corner {
   position: absolute;
   width: 250px; /* adjust for size */
   height: 150px;
-  z-index: 1;
+  z-index: 20;
   /* background-color: #2d2f2d; default color or override per corner */
   clip-path: polygon(0 0, 100% 0, 0 100%); /* triangle shape */
 }
