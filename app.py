@@ -1,8 +1,9 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from flask_cors import CORS
 from auth import check_token_expiration
 from manage_tokens import *
 import requests
+import os
 
 cost_of_journey = 3.8
 
@@ -54,12 +55,28 @@ def calc_savings(cost_of_journey):
   }
 
 app = Flask(__name__)
-CORS(app, origins=["http://127.0.0.1:5500"])
-@app.route("/api/savings")
 
-def index():
+frontend_origin = os.getenv("FRONTEND_ORIGIN", "http://127.0.0.1:5500")
+CORS(app, origins=[frontend_origin])
+
+@app.route("/api/savings")
+def savings():
   savings = calc_savings(cost_of_journey)
   return jsonify(savings)
 
+@app.route("/")
+def index():
+  return render_template('index.html')
+
 if __name__ == '__main__': 
   app.run(debug = True)
+
+if __name__ == '__main__':
+    env = os.getenv("FLASK_ENV", "development")
+    debug = env == "development"
+
+    app.run(
+        debug=debug,
+        host='0.0.0.0' if env == "production" else '127.0.0.1',
+        port=int(os.getenv("PORT", 5000))
+    )
